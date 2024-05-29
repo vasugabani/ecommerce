@@ -4,12 +4,14 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import React from 'react'
 import Signup from './app/container/Signup/Signup';
 import Login from './app/container/Login/Login';
+import Main_page from './app/container/main_page/Main_page';
 
 export default function App() {
   return (
     <>
     {/* <Signup/> */}
-    <Login/>
+    {/* <Login/> */}
+    <Main_page/>
     </>
 //     <View style={{ backgroundColor: '#F9F9F9' }}>
 //       <Text style={{ padding: 10 }}><FontAwesome name='angle-left' size={50} color='#222222' /></Text>
