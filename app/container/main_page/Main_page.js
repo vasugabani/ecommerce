@@ -1,9 +1,22 @@
-import { View, Text, StatusBar, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StatusBar, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import React from 'react'
+
+const data=[
+    {
+        id:'Dorothy perkins',
+        title:'Evening Dress',
+        price:
+        discount:
+        cost:
+
+    }
+]
 
 export default function Main_page() {
     return (
-        <View style={{flex:1}}>
+
+        <ScrollView>
             <StatusBar
                 translucent backgroundColor='transparent'
                 barStyle="dark-content"
@@ -34,17 +47,30 @@ export default function Main_page() {
                     <View><Text style={Styles.viewall}>View all</Text></View>
                     <Text style={{ bottom: 18, fontSize: 11, fontFamily: 'Metrophobic-Regular', color: '#9B9B9B' }}>Super summer sale</Text>
                 </View>
-                <View style={Styles.container1}>
-                    <View style={Styles.box}>
-                        <Image style={Styles.img}
-                            source={require('../../../assets/image/main_page_girl_img.png')}>
-                        </Image>
-                        <Text>kkr</Text>
-                    </View>
-                </View>
             </View>
 
-        </View>
+            <View style={{ width: 190, height: 500,marginTop:20,marginHorizontal:30}}>
+                <Image style={Styles.Img} source={require('../../../assets/image/main_page_girl_img.png')} />
+
+                <View style={{flexDirection:'row',marginHorizontal:4,columnGap:5,marginTop:10}}>
+                    <FontAwesome name="star" size={20} color="#FFBA49" />
+                    <FontAwesome name="star" size={20} color="#FFBA49" />
+                    <FontAwesome name="star" size={20} color="#FFBA49" />
+                    <FontAwesome name="star" size={20} color="#FFBA49" />
+                    <FontAwesome name="star" size={20} color="#FFBA49" />
+                </View>
+
+                <Text style={{color:'#9B9B9B',fontFamily:'Metrophobic-Regular',fontSize:11,marginHorizontal:4,marginTop:5}}>Dorothy perkins</Text>
+                <Text style={{color:'#222222',fontFamily:'Metropolis-Bold',fontSize:16,marginHorizontal:4,marginTop:5}}>Evening Dress</Text>
+
+                <View style={{flexDirection:'row',marginHorizontal:4,marginTop:5}}>
+                <Text style={{color:'#9B9B9B'}}>15$ </Text>
+                <Text style={{color:'#DB3022',fontFamily:'Metropolis-Bold'}}>12$</Text>
+                </View>
+
+            </View>
+
+        </ScrollView>
 
     )
 }
@@ -70,7 +96,6 @@ const Styles = StyleSheet.create({
     },
     container: {
         width: 481,
-        height: 337,
         top: 20,
         left: 30,
     },
@@ -88,17 +113,9 @@ const Styles = StyleSheet.create({
         left: 261,
         bottom: 30
     },
-    container1: {
-        width: 150,
-        height: 260,
-    },
-    box: {
-        width: 148,
-        height: 184,
-    },
-    img: {
+    Img: {
         width: 190,
         height: 276,
-        borderRadius: 10
+        borderRadius:8
     }
 })
