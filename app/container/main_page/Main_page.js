@@ -3,14 +3,14 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import React from 'react'
 
 const data=[
-    {
-        id:'Dorothy perkins',
-        title:'Evening Dress',
-        price:
-        discount:
-        cost:
+    // {
+    //     id:'Dorothy perkins',
+    //     title:'Evening Dress',
+    //     price:
+    //     discount:
+    //     cost:
 
-    }
+    // }
 ]
 
 export default function Main_page() {
