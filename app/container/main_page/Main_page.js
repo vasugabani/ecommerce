@@ -17,10 +17,10 @@ export default function Main_page() {
     return (
 
         <ScrollView>
-            <StatusBar
-                translucent backgroundColor='transparent'
-                barStyle="dark-content"
-            />
+                <StatusBar
+                    translucent backgroundColor='transparent'
+                    barStyle="dark-content"
+                />
             <View style={{ position: 'relative' }}>
                 <Image
                     style={Styles.Fashion_img}
@@ -118,4 +118,5 @@ const Styles = StyleSheet.create({
         height: 276,
         borderRadius:8
     }
+    
 })
