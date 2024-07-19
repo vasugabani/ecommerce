@@ -9,7 +9,7 @@ export default function CategoriesTwo() {
     return (
         <ScrollView>
             <StatusBar
-                backgroundColor="#fff"
+                backgroundColor="#fff"              
                 barStyle="dark-content"
             />
 
