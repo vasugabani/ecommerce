@@ -17,6 +17,9 @@ import My_Orders from './app/container/My_Orders/My_Orders'
 import My_Bag from './app/container/My_Bag/My_Bag'
 import My_Profile from './app/container/My_Profile/My_Profile'
 import Success from './app/container/Success/Success'
+import {NavigationContainer} from '@react-navigation/native';
+import BottamTab from './app/Navigation/BottamTab'
+import Forget from './app/container/Forget/Forget'
 
 export default function App() {
 
@@ -24,7 +27,10 @@ export default function App() {
   return (
    
       <Provider store={store}>
-        <Login />
+           <NavigationContainer>
+         <BottamTab/>
+        </NavigationContainer>
+       {/* <Forget/> */}
         {/* <Signup/> */}
         {/* <AddShipingAddress/> */}
         {/* <Maainpage/> */}
@@ -40,5 +46,6 @@ export default function App() {
         {/* <Success/> */}
         {/* <Drawer /> */}
       </Provider>
+       
   )
 }
