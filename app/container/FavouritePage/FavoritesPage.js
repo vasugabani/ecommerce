@@ -57,7 +57,7 @@ const Data2 = [
         price: 9
     }
 ]
-export default function FavouritePage() {
+export default function FavouritePage({route,navigation}) {
     const ProductCard = ({ v }) => (
 
         <View style={styles.CategorisView}>
@@ -67,16 +67,16 @@ export default function FavouritePage() {
     )
     const ProductData = ({ v }) => (
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <View style={styles.productMainView}>
+            <TouchableOpacity style={styles.productMainView} onPress={()=>{navigation.navigate("ProductCard")}}>
                 <View style={styles.productImg}>
                     <Image source={v.img} style={{ width: '100%', height: '100%', borderTopLeftRadius: 15, borderTopRightRadius: 15 }} />
-                   
+
                 </View>
-              <View>
-              <Fontisto name="shopping-bag" size={18} color="#F9F9F9"  style={styles.shoppingcard}/>
-              </View>
-                 
-        
+                <View>
+                    <Fontisto name="shopping-bag" size={18} color="#F9F9F9" style={styles.shoppingcard} />
+                </View>
+
+
                 <View style={styles.productText}>
                     <View style={styles.iconview}>
                         <FontAwesome name="star" size={20} style={{ color: '#FFBA49' }} />
@@ -91,7 +91,7 @@ export default function FavouritePage() {
                     <Text style={styles.price}>{v.price}$</Text>
                 </View>
 
-            </View>
+            </TouchableOpacity>
         </View>
     )
     return (
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         marginLeft: horizontalScale(150)
     },
     KeyboardArrow: {
-        marginTop:  verticalScale(16),
+        marginTop: verticalScale(16),
         marginLeft: horizontalScale(-15)
     },
     CategorisView: {
@@ -202,14 +202,14 @@ const styles = StyleSheet.create({
     productImg: {
         width: '100%',
         height: '68%',
-      
+
     },
 
     productText: {
         width: '100%',
         height: '32%',
         backgroundColor: 'white',
-        elevation:2,
+        elevation: 2,
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15
     },
@@ -235,22 +235,22 @@ const styles = StyleSheet.create({
     },
     price: {
         color: 'black',
-        fontSize:moderateScale(16),
+        fontSize: moderateScale(16),
         fontFamily: 'Metropolis-Medium',
-        paddingHorizontal:horizontalScale(7),
+        paddingHorizontal: horizontalScale(7),
         marginTop: verticalScale(4)
     },
 
     shoppingcard: {
-       backgroundColor:'#DA2F23',
-       position:'absolute',
-       padding:horizontalScale(15),
-       padding:verticalScale(15),
-       borderRadius:moderateScale(50) ,
-       bottom:verticalScale(-15),
-       right:horizontalScale(0),
-       zIndex:999
-      
+        backgroundColor: '#DA2F23',
+        position: 'absolute',
+        padding: horizontalScale(15),
+        padding: verticalScale(15),
+        borderRadius: moderateScale(50),
+        bottom: verticalScale(-15),
+        right: horizontalScale(0),
+        zIndex: 999
+
     },
 
 

@@ -11,7 +11,7 @@ const Data = [
         id: 1,
         title: 'Dorothy perkins',
         subtitle: 'Evening Dress',
-        img: require('../../assets/image/Shopping_img.jpg'),
+        img: require('../../assets/image/main_page_girl_img.png'),
         price: 15,
         discount: 12
     },
@@ -19,7 +19,7 @@ const Data = [
         id: 0,
         title: 'Dorothy perkins',
         subtitle: 'Evening Dress',
-        img: require('../../assets/image/Shopping_img.jpg'),
+        img: require('../../assets/image/fashion_boy_img10.png'),
         price: 15,
         discount: 12
     },
@@ -27,7 +27,7 @@ const Data = [
         id: 2,
         title: 'Dorothy perkins',
         subtitle: 'Evening Dress',
-        img: require('../../assets/image/Shopping_img.jpg'),
+        img: require('../../assets/image/fashion_boy_img5.png'),
         price: 15,
         discount: 12
     },
@@ -35,16 +35,16 @@ const Data = [
         id: 3,
         title: 'Dorothy perkins',
         subtitle: 'Evening Dress',
-        img: require('../../assets/image/Shopping_img.jpg'),
+        img: require('../../assets/image/fashion_girl_img6.png'),
         price: 15,
         discount: 12
     }
 ]
-export default function ProductCard() {
+export default function ProductCard({route,navigation}) {
     const [images, setImages] = useState(
         [
-            require('../../assets/image/Shopping_img.jpg'),
-            require('../../assets/image/Shopping_img.jpg')          // Local image
+            require('../../assets/image/fashion_girl_img8.png'),
+            require('../../assets/image/fashion_girl_img9.png')          // Local image
         ]
     )
     console.log(images);
@@ -64,7 +64,7 @@ export default function ProductCard() {
     }
 
     const ProductCard = ({ v }) => (
-        <View style={{ marginRight: 20 }}>
+        <TouchableOpacity style={{ marginRight: 20 }} onPress={()=>{navigation.navigate("shoop")}}>
 
             <Image source={v.img} style={{ width: 170, height: 250, borderRadius: 10 }}></Image>
 
@@ -87,7 +87,7 @@ export default function ProductCard() {
 
             </View>
 
-        </View>
+        </TouchableOpacity>
 
 
 
@@ -231,7 +231,7 @@ export default function ProductCard() {
                     
                 </ScrollView>
             </View>
-            <TouchableOpacity style={styles.ButtonView}>
+            <TouchableOpacity style={styles.ButtonView} onPress={()=>{navigation.navigate("MyBag")}}>
                 <View style={styles.ButtonUnderView}>
                     <Text style={styles.AddCart}>ADD TO CART</Text>
                 </View>

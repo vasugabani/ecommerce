@@ -4,14 +4,16 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Maainpage from '../container/Mainpage/Maainpage';
 import FavouritePage from '../container/FavouritePage/FavoritesPage';
 import My_Bag from '../container/My_Bag/My_Bag';
-import My_Orders from '../container/My_Orders/My_Orders';
+import My_Orders from '../container/My_Profile/My_Profile';
 import Login from '../container/Login/Login';
 import Entypo from 'react-native-vector-icons/Entypo';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; 
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { HomeStack } from './StakeNavigator';
+import { BagStack, FavouriteStack, HomeStack, ProductStack, ShopStack } from './StakeNavigator';
 import ProductCard from '../container/ProductCard/ProductCard';
 import Forget from '../container/Forget/Forget';
+import My_Profile from '../container/My_Orders/My_Orders';
 
 
 const Tab = createBottomTabNavigator();
@@ -25,36 +27,36 @@ export default function BottamTab() {
                     <Entypo name="home" color={color} size={20} />
                 ),
             }} name="Home" component={HomeStack} />
-         
+
             <Tab.Screen options={{
 
-                tabBarLabel: 'shop',
+                tabBarLabel: 'Shop',
                 tabBarIcon: ({ color, size }) => (
                     <Entypo name="shopping-cart" color={color} size={20} />
                 ),
-            }} name="Favourite" component={FavouritePage} />
-                   <Tab.Screen options={{
-                tabBarLabel: 'My bag',
+            }} name="Favourite" component={ShopStack} />
+            <Tab.Screen options={{
+                tabBarLabel: 'Bag',
                 tabBarIcon: ({ color, size }) => (
                     <Entypo name="shop" color={color} size={20} />
+
                 ),
-            }} name="My bag" component={My_Bag} />
-        
+            }} name="product" component={ProductStack} />
             <Tab.Screen options={{
-                tabBarLabel: 'profile',
+                tabBarLabel: 'Favourite',
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesome name="reorder" color={color} size={20} />
+                    <EvilIcons name="heart" color={color} size={28} />
+                ),
+            }} name="My bag" component={BagStack} />
+         
+
+            <Tab.Screen options={{
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({ color, size }) => (
+                    <FontAwesome name="user" color={color} size={20} />
                 ),
             }} name="order details" component={My_Orders} />
-            {/* <Tab.Screen       options={{
-                tabBarLabel: 'personal',
-                tabBarIcon: ({ color, size }) => (
-                    <MaterialIcons name="personal-injury" color={color} size={20} />
-                ),
-            }}  name="personal" component={Login} /> */}
-      
-             <Tab.Screen  name="product" component={ProductCard} />
-             {/* <Tab.Screen  name="forget" component={Forget} /> */}
+    
         </Tab.Navigator>
     )
 }
