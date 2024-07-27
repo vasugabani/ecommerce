@@ -12,13 +12,13 @@ export default function Filter() {
     const [selectedCategory, setselectedCategory] = useState(null);
     const [selctbrand, setselctbrand] = useState(null)
 
-    const size = ['XS' , 'S' , 'M' , 'L' , 'XL'];
+    const size = ['XS', 'S', 'M', 'L', 'XL'];
 
     const selectSize = (size) => {
         setSelectedSize(size);
     };
 
-    
+
 
     const categories = ['All', 'Women', 'Men', 'Boys', 'Girls'];
 
@@ -72,7 +72,7 @@ export default function Filter() {
 
                     <Text style={style.text}>Sizes</Text>
                     <View style={style.sizeview}>
-                    {size.map((size) => (
+                        {size.map((size) => (
                             <TouchableOpacity
                                 key={size}
                                 style={[
@@ -91,7 +91,7 @@ export default function Filter() {
                                 </Text>
                             </TouchableOpacity>
                         ))}
-  
+
                     </View>
 
                     <Text style={style.text}>Category</Text>

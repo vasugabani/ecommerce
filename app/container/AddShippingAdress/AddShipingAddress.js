@@ -6,7 +6,7 @@ import { horizontalScale, moderateScale, verticalScale } from '../../Metrics';
 
 
 
-export default function AddShipingAddress() {
+export default function AddShipingAddress({route,navigation}) {
     return (
         <ScrollView style={styles.container}>
             <StatusBar
@@ -59,7 +59,7 @@ export default function AddShipingAddress() {
 
                 </View>
             </View>
-            <TouchableOpacity style={styles.ButtonView}><View style={styles.ButtonUnderView}>
+            <TouchableOpacity style={styles.ButtonView} onPress={()=>{navigation.navigate("cart")}}><View style={styles.ButtonUnderView}>
                 <Text style={styles.AddCart}>SAVE ADDRESS</Text>
             </View>
             </TouchableOpacity>

@@ -58,7 +58,7 @@ const Data2 = [
         price: 9
     }
 ]
-export default function SubCategories2() {
+export default function Shopping({route,navigation}) {
     const ProductCard = ({ v }) => (
 
         <View style={styles.CategorisView}>
@@ -67,7 +67,7 @@ export default function SubCategories2() {
         </View>
     )
     const ProductData = ({ v }) => (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'space-between' }} onPress={()=>{navigation.navigate("ProductCard")}}>
             <View style={styles.productMainView}>
                 <View style={styles.productImg}>
                     <Image source={v.img} style={{ width: '100%', height: '100%',borderTopLeftRadius:15,borderTopRightRadius:15}} />   
@@ -90,7 +90,7 @@ export default function SubCategories2() {
                 </View>
 
             </View>
-        </View>
+        </TouchableOpacity>
     )
     return (
         <ScrollView style={styles.container}>
@@ -100,9 +100,9 @@ export default function SubCategories2() {
                 barStyle="dark-content"
             />
             <View style={styles.ArrowView}>
-                <Text style={styles.KeyboardArrow}><MaterialIcons name="keyboard-arrow-left" size={50} color="black" /></Text>
+                {/* <Text style={styles.KeyboardArrow}><MaterialIcons name="keyboard-arrow-left" size={50} color="black" /></Text>
                 <Text style={styles.ArrowText}>Women's tops</Text>
-                <TouchableOpacity><MaterialIcons name="search" size={30} color="black" style={{ marginTop: 25 }} /></TouchableOpacity>
+                <TouchableOpacity><MaterialIcons name="search" size={30} color="black" style={{ marginTop: 25 }} /></TouchableOpacity> */}
             </View>
             <View style={{ backgroundColor: 'white', marginBottom: 25 }}>
                 <FlatList
@@ -113,7 +113,7 @@ export default function SubCategories2() {
                 />
 
                 <View style={styles.FilterOptions}>
-                    <TouchableOpacity style={{flexDirection:'row'}}><MaterialIcons name="filter-list" size={30} color="black" /><Text style={styles.filterText}>Filters</Text></TouchableOpacity>
+                    <TouchableOpacity style={{flexDirection:'row'}} onPress={()=>navigation.navigate("filter")}><MaterialIcons name="filter-list" size={30} color="black" /><Text style={styles.filterText}>Filters</Text></TouchableOpacity>
                     <TouchableOpacity style={{flexDirection:'row'}}><FontAwesome name="arrows-v" size={26} color="black" /><Text style={styles.filterText}>Price:lowest to high</Text></TouchableOpacity>
                     <TouchableOpacity><FontAwesome name="th-list" size={26} color="black" /></TouchableOpacity>
                 </View>
@@ -144,8 +144,8 @@ const styles = StyleSheet.create({
     },
     ArrowView: {
         width: '100%',
-        height: 80,
-        marginTop: 40,
+        // height: 60,
+        marginTop: 10,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },

@@ -91,7 +91,7 @@ export default function Maainpage({ route, navigation }) {
 
   console.log("sjdjdjdjjdjjd", category);
   const ProductCard = ({ v }) => (
-    <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={()=>{navigation.navigate("FavouritePage")}}>
+    <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={()=>{navigation.navigate("ProductCard")}}>
 
       <Image source={v.img} style={{ width: 170, height: 250, borderRadius: 10 }}></Image>
 
@@ -135,7 +135,7 @@ export default function Maainpage({ route, navigation }) {
         <View style={{ width: horizontalScale(200) }}>
           <Text style={style.Fashionsale}>Fashion Sale</Text>
 
-          <TouchableOpacity style={style.checkbutton}>
+          <TouchableOpacity style={style.checkbutton} onPress={()=>navigation.navigate("Categories Two")}>
             <Text style={style.CheckText}>Check</Text>
 
           </TouchableOpacity>
@@ -234,8 +234,6 @@ export default function Maainpage({ route, navigation }) {
         )
 
       })}
-
-
     </ScrollView>
   )
 }
@@ -265,7 +263,7 @@ const style = StyleSheet.create({
     backgroundColor: '#DB3022',
     height: verticalScale(40),
     alignItems: 'center',
-    padding: 10,
+    padding: 8,
     borderRadius: moderateScale(50),
     position: 'absolute',
     bottom: moderateScale(80),

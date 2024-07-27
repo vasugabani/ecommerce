@@ -19,7 +19,7 @@ export default function Rating() {
                             barStyle="dark-content"
                             translucent backgroundColor='transparent'
                         />
-                        <MaterialIcons name='chevron-left' size={30} color='black'></MaterialIcons>
+                        {/* <MaterialIcons name='chevron-left' size={30} color='black'></MaterialIcons> */}
                         <Text style={style.headingtext}>Rating&Reviews</Text>
                     </View>
 
@@ -209,7 +209,7 @@ export default function Rating() {
 
 const style = StyleSheet.create({
     container: {
-        marginTop: verticalScale(40),
+        // marginTop: verticalScale(40),
         marginLeft: horizontalScale(16)
     },
 

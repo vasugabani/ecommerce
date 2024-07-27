@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nithinpp69/react-native-animated-button": "^2.1.0",
     "@react-native-community/slider": "^4.5.2",
     "@react-native-firebase/app": "^20.2.1",
     "@react-native-firebase/firestore": "^20.2.1",

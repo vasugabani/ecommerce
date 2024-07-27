@@ -8,22 +8,22 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import React from 'react';
 import { horizontalScale, moderateScale, verticalScale } from '../../Metrics';
 
 
-export default function My_Profile() {
+export default function My_Profile({ route, navigation }) {
   return (
     <ScrollView>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
 
       <View style={Styles.container}>
         <View style={Styles.search}>
-          <TouchableOpacity>
-            <EvilIcons name="search" size={32} color="#222222" />
-          </TouchableOpacity>
+          {/* <TouchableOpacity>
+          <Fontisto name='search' size={20} color='black' />
+          </TouchableOpacity> */}
         </View>
 
         <Text style={Styles.myProfile}>My Profile</Text>
@@ -43,14 +43,14 @@ export default function My_Profile() {
         </View>
 
         <View style={Styles.datamain}>
-          <View style={Styles.dataHead}>
+          <TouchableOpacity style={Styles.dataHead}  onPress={() => { navigation.navigate("My Orders") }}>
             <View>
               <Text style={Styles.data1}>My orders</Text>
               <Text style={Styles.data2}>Already have 12 orders</Text>
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity  onPress={() => { navigation.navigate("My Orders") }}>
                 <MaterialIcons
                   name="keyboard-arrow-right"
                   size={30}
@@ -58,16 +58,16 @@ export default function My_Profile() {
                 />
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
 
-          <View style={Styles.dataHead}>
+          <TouchableOpacity style={Styles.dataHead}  onPress={() => navigation.navigate("Shipping Address")}>
             <View>
               <Text style={Styles.data1}>Shipping addresses</Text>
               <Text style={Styles.data2}>3 ddresses</Text>
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Shipping Address")}>
                 <MaterialIcons
                   name="keyboard-arrow-right"
                   size={30}
@@ -75,7 +75,7 @@ export default function My_Profile() {
                 />
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
 
           <View style={Styles.dataHead}>
             <View>
@@ -111,14 +111,14 @@ export default function My_Profile() {
             </View>
           </View>
 
-          <View style={Styles.dataHead}>
+          <TouchableOpacity style={Styles.dataHead}  onPress={()=>navigation.navigate("Rating")}>
             <View>
               <Text style={Styles.data1}>My reviews</Text>
               <Text style={Styles.data2}>Reviews for 4 items</Text>
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>navigation.navigate("Rating")}>
                 <MaterialIcons
                   name="keyboard-arrow-right"
                   size={30}
@@ -126,7 +126,7 @@ export default function My_Profile() {
                 />
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
 
           <View style={Styles.dataHead}>
             <View>
@@ -159,7 +159,7 @@ const Styles = StyleSheet.create({
   search: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginTop: verticalScale(15),
+    marginTop: verticalScale(10),
   },
   myProfile: {
     fontFamily: 'Metropolis-Bold',
@@ -191,11 +191,11 @@ const Styles = StyleSheet.create({
     color: '#9B9B9B',
   },
   dataHead: {
-    paddingVertical:verticalScale(10),
+    paddingVertical: verticalScale(10),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-   elevation: 0.2,
+    elevation: 0.2,
   },
   data1: {
     fontFamily: 'Metropolis-Bold',

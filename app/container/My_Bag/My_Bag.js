@@ -131,7 +131,7 @@ export default function My_Bag({route,navigation}) {
 
         <View style={Styles.feather}>
           <TouchableOpacity>
-            <Feather name="search" size={25} color="#222222" />
+            {/* <Feather name="search" size={25} color="#222222" /> */}
           </TouchableOpacity>
         </View>
         <View>
@@ -160,7 +160,7 @@ export default function My_Bag({route,navigation}) {
         </View>
 
         <View style={Styles.checkoutBtn}>
-          <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
+          <TouchableOpacity onPress={()=>navigation.navigate("Addshipping Adress")}>
             
             <Text style={Styles.checkoutText}>Check out</Text>
           </TouchableOpacity>
@@ -174,7 +174,7 @@ const Styles = StyleSheet.create({
   feather: {
     alignItems: 'flex-end',
     marginHorizontal: horizontalScale(15),
-    marginTop: verticalScale(10),
+    marginTop: verticalScale(15),
   },
   bag: {
     color: '#222222',

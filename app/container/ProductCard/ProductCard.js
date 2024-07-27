@@ -102,9 +102,9 @@ export default function ProductCard({route,navigation}) {
                     />
                 <ScrollView style={styles.container}>
                     <View style={styles.ArrowView}>
-                        <Text style={styles.KeyboardArrow}><MaterialIcons name="keyboard-arrow-left" size={50} color="black" /></Text>
+                        {/* <Text style={styles.KeyboardArrow}><MaterialIcons name="keyboard-arrow-left" size={50} color="black" /></Text>
                         <Text style={styles.ArrowText}>Short dress</Text>
-                        <TouchableOpacity><MaterialIcons name="share" size={30} color="black" style={{ marginTop: 27 }} /></TouchableOpacity>
+                        <TouchableOpacity><MaterialIcons name="share" size={30} color="black" style={{ marginTop: 27 }} /></TouchableOpacity> */}
                     </View>
 
 
@@ -247,8 +247,8 @@ const styles = StyleSheet.create({
     },
     ArrowView: {
         width: '100%',
-        height: verticalScale(80),
-        marginTop: verticalScale(40),
+        // height: verticalScale(15),
+        marginTop: verticalScale(10),
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
